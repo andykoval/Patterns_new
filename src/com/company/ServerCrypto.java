@@ -16,11 +16,11 @@ public class ServerCrypto {
         ServerSocket ssock = new ServerSocket(12347);
         Socket sock = ssock.accept();
 
-        InputStream in = new CryptoInputStream(sock.getInputStream(),key);
-        OutputStream out = new CryptoOutputStream(sock.getOutputStream(), key);
+//        InputStream in = new CryptoInputStream(sock.getInputStream(),key);
+//        OutputStream out = new CryptoOutputStream(sock.getOutputStream(), key);
 
-//        InputStream in = sock.getInputStream();
-//        OutputStream out = sock.getOutputStream();
+        InputStream in = sock.getInputStream();
+        OutputStream out = sock.getOutputStream();
 //        InputStream in = new BufferedInputStream(
 //                new CryptoInputStream(sock.getInputStream(), key));
 //        OutputStream out = new BufferedOutputStream (

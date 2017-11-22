@@ -10,6 +10,7 @@ import java.util.List;
 public class Sensor {
     private static int time;
     private static int temerature;
+    private static boolean bGreen, bYell, bRed;
 
     List<Alarm> alarms;
 
@@ -35,23 +36,35 @@ public class Sensor {
         sens.alarms.add(new Alarm() {
             @Override
             public void tempChange(int temp) {
-                if (temp == 100) System.out.println("Зеленый");
+
+                if (temp >= 100 && bGreen == false) {
+                    System.out.println("Зеленый");
+                    bGreen = true;
+                }
             }
         });
         sens.alarms.add(new Alarm() {
             @Override
             public void tempChange(int temp) {
-                if (temp == 300) System.out.println("Желтый");
+
+                if (temp >= 300 && bYell == false) {
+                    System.out.println("Желтый");
+                    bYell = true;
+                }
             }
         });
         sens.alarms.add(new Alarm() {
             @Override
             public void tempChange(int temp) {
-                if (temp == 500) System.out.println("Красный");
+
+                if (temp >= 500 && bRed) {
+                    System.out.println("Красный");
+                    bRed = true;
+                }
             }
         });
 
-        for (temerature =0; temerature < 450; temerature++)
+        for (temerature = 0; temerature < 450; temerature++)
             sens.notifyAlarm(temerature);
     }
 }

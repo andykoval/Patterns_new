@@ -37,11 +37,11 @@ public class ClientCrypto {
 
         Socket sock = new Socket();
         sock.connect(new InetSocketAddress("localhost", 12347));
-        InputStream in = new CryptoInputStream(sock.getInputStream(), key);
-        OutputStream out = new CryptoOutputStream(sock.getOutputStream(), key);
+//        InputStream in = new CryptoInputStream(sock.getInputStream(), key);
+//        OutputStream out = new CryptoOutputStream(sock.getOutputStream(), key);
 
-//        InputStream in = sock.getInputStream();
-//        OutputStream out = sock.getOutputStream();
+        InputStream in = sock.getInputStream();
+        OutputStream out = sock.getOutputStream();
 //        InputStream in = new BufferedInputStream(
 //                new CryptoInputStream(sock.getInputStream(), key));
 //        OutputStream out = new BufferedOutputStream (
